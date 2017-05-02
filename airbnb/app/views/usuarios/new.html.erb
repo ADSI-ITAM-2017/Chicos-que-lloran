@@ -2,7 +2,7 @@
 <%= form_for @usuario do |f| %>
   <% if @usuario.errors.any? %>
     <div class="error_messages">
-      <h2>Form is invalid</h2>
+      <h2>Forma inválida</h2>
       <ul>
         <% @usuario.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -20,12 +20,12 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :contraseña %><br />
-    <%= f.password_field :contraseña %>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :confirmar_contraseña %><br />
-    <%= f.password_field :confirmar_contraseña %>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions"><%= f.submit "Regístrate!" %></div>
 <% end %>
