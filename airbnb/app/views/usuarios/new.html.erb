@@ -2,12 +2,7 @@
 <%= form_for @usuario do |f| %>
   <% if @usuario.errors.any? %>
     <div class="error_messages">
-      <h2>Forma inválida</h2>
-      <ul>
-        <% @usuario.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+      <h2>No coinciden las contraseñas</h2>
     </div>
   <% end %>
 
@@ -20,11 +15,11 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :contraseña %><br />
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :confirmar_contraseña %><br />
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions"><%= f.submit "Regístrate!" %></div>
