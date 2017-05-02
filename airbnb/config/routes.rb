@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :usuarios
   resources :propiedades
   root to: 'propiedades#index'
 

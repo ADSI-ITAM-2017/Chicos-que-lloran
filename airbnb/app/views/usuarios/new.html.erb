@@ -1,0 +1,31 @@
+<h1>Crea tu cuenta</h1>
+<%= form_for @usuario do |f| %>
+  <% if @usuario.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @usuario.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :contraseña %><br />
+    <%= f.password_field :contraseña %>
+  </div>
+  <div class="field">
+    <%= f.label :confirmar_contraseña %><br />
+    <%= f.password_field :confirmar_contraseña %>
+  </div>
+  <div class="actions"><%= f.submit "Regístrate!" %></div>
+<% end %>
