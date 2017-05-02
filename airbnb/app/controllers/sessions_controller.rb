@@ -11,4 +11,8 @@ class SessionsController < ApplicationController
 	    render :new
 	  end
   end
+  def destroy
+	  session[:usuario_id] = nil
+	  redirect_to root_url, notice: 'Has cerrado sesión'
+  end
 end

@@ -1,14 +1,15 @@
 class UsuariosController < ApplicationController
 	def new
-    @usuario = Usuario.new
-  end
+    	@usuario = Usuario.new
+  	end
 
   def create
     @usuario = Usuario.new(allowed_params)
     if @usuario.save
-      redirect_to root_url, notice: 'Gracias por registrarte!'
+    	session[:usuario_id] = @usuario.id
+      	redirect_to root_url, notice: 'Gracias por registrarte, '+@usuario.email
     else
-      render :new
+      	render :new
     end
   end
 
