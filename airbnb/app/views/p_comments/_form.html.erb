@@ -1,0 +1,22 @@
+<%= form_with(model: p_comment, local: true) do |form| %>
+  <% if p_comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(p_comment.errors.count, "error") %> prohibited this p_comment from being saved:</h2>
+
+      <ul>
+      <% p_comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content, id: :p_comment_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

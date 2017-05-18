@@ -6,7 +6,16 @@
                         <h1 class="brand-heading">   Precio: $<%= @propiedad.precio %></h1>
                         <p class="intro-text">   Arrendador: <%= @propiedad.arrendador %></p>
                         <p class="intro-text">    Direccion: <%= @propiedad.direccion %></p>
-                        <p class="intro-text">  Descripción: <%= @propiedad.descripcion %></p>   
+                        <p class="intro-text">  Descripción: <%= @propiedad.descripcion %></p> 
+                        <% @p_comments.each do |p_comment| %>
+
+      <tr>
+        <td> Comentario: <%= p_comment.content %></td>
+        <td> Calificacion: <%= p_comment.califiacion %></td>
+        
+      </tr>
+      <br>
+    <% end %>  
                         <%= link_to "Ver propiedades", root_url %>                    
                     </div>
                 </div>

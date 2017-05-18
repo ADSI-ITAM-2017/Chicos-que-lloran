@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518141529) do
+ActiveRecord::Schema.define(version: 20170518144134) do
 
   create_table "messages", force: :cascade do |t|
     t.string "content"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 20170518141529) do
     t.datetime "updated_at", null: false
     t.integer "usuario1_id"
     t.integer "usuario2_id"
+  end
+
+  create_table "p_comments", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "propiedad_id"
+    t.integer "califiacion"
+    t.index ["propiedad_id"], name: "index_p_comments_on_propiedad_id"
   end
 
   create_table "propiedads", force: :cascade do |t|
