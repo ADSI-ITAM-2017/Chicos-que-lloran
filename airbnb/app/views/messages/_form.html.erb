@@ -16,6 +16,16 @@
     <%= form.text_field :content, id: :message_content %>
   </div>
 
+  <div class="field">
+    <%= form.label :usuario1_id %>
+    <%= form.text_field :usuario1_id, id: :message_usuario1_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :usuario2_id %>
+    <%= form.text_field :usuario2_id, id: :message_usuario2_id %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
