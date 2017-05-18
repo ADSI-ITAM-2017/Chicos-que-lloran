@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <h3><%= form.label :contenido_del_mensaje %>:</h3><br>
+    <h5><%= form.label :contenido_del_mensaje %>:</h5>
     <%= form.text_field :content, id: :message_content %>
   </div>
-
+<br>
   <div class="field">
-    <%= form.label :usuario1_id %>
+	    <h5>    <%= form.label :usuario1_id %>:</h5>
     <%= form.text_field :usuario1_id, id: :message_usuario1_id %>
   </div>
-
+<br>
   <div class="field">
-    <%= form.label :usuario2_id %>
+<h5>    <%= form.label :usuario2_id %>:</h5>
     <%= form.text_field :usuario2_id, id: :message_usuario2_id %>
   </div>
-
+<br>
   <div class="actions">
     <%= form.submit %>
   </div>

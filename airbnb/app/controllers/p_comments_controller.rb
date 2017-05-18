@@ -28,7 +28,7 @@ class PCommentsController < ApplicationController
 
     respond_to do |format|
       if @p_comment.save
-        format.html { redirect_to @p_comment, notice: 'P comment was successfully created.' }
+        format.html { redirect_to @p_comment, notice: 'Comentario agregado correctamente' }
         format.json { render :show, status: :created, location: @p_comment }
       else
         format.html { render :new }
