@@ -40,23 +40,29 @@
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 		<% if logged_in? %>
+			</li>
+ 			<li>
+                        <a class="page-scroll" href="/messages.html">Mis mensajes</a>
+                    </li>
 		    <li>
-                        <a class="page-scroll" href="logout">Cerrar sesión</a>
+                        <a class="page-scroll" href="/logout.html">Cerrar sesión</a>
                     </li>
 		<% else %>
                    
                     <li>
-                        <a class="page-scroll" href="login">Iniciar sesión</a>
+                        <a class="page-scroll" href="/login.html">Iniciar sesión</a>
                     </li>
  			<li>
-                        <a class="page-scroll" href="registro">Registrate</a>
+                        <a class="page-scroll" href="/registro.html">Registrate</a>
                     </li>
                  <% end %>
                 </ul>
             </div>
+
+		<br>
             <%= form_tag(propiedades_path, :method => "get", id: "search-form") do %>
                 <%= text_field_tag :search, params[:search], placeholder: "Buscar propiedades" %>
-                <%= submit_tag "Search", :name => nil %>
+                <%= submit_tag "Buscar", :name => nil %>
             <% end %>
             <!-- /.navbar-collapse -->
         </div>

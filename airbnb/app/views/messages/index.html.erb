@@ -1,13 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Messages</h1>
+<h1>Mensajes</h1>
 
-<table>
+<!-- trapitos -->
+<header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+
+<table align="center">
   <thead>
     <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
+
+      <td colspan="3" align="center" valign="middle"><h2>Mensajes: </h2></td>
+	
     </tr>
+	<tr>
+	<td align="center" valign="middle"><h5> De: </h5></td>
+	<td align="center" valign="middle"><h5> Para: </h5></td>
+	<td align="center" valign="middle"><h5> Mensaje: </h5></td>
+	<td align="center" valign="middle"><h5> Fecha de envío: </h5></td>
+	</tr>
+<tr></tr>
   </thead>
 
   <tbody>
@@ -15,10 +30,11 @@
       <tr>
       <% if logged_in? %>
           <% if Usuario.find_by_id(session[:usuario_id]).id == message.usuario1_id ||  Usuario.find_by_id(session[:usuario_id]).id == message.usuario2_id  %>
-            <td><%= Usuario.find_by_id(message.usuario1_id).nombre %></td>
-            <td><%= Usuario.find_by_id(message.usuario2_id).nombre %></td>
-            <td><%=  %></td>
-            <td> Contenido: <%= message.content %></td>
+            <td align="center" valign="middle" ><h6><%= Usuario.find_by_id(message.usuario1_id).nombre %> </h6></td>
+            <td align="center" valign="middle"><h6><%=  Usuario.find_by_id(message.usuario2_id).nombre %> </h6> </td>
+
+            <td align="center" valign="middle"> <h4> <%= message.content %> </h4> </td> 
+		<td align="center" valign="middle"><h6><%= message.updated_at %> </h6> </td>
           <%end%>
         <%end%>
       </tr>
@@ -26,6 +42,14 @@
   </tbody>
 </table>
 
+
+<!-- trapitos -->
+	 </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
 <br>
 
-<%= link_to 'New Message', new_message_path %>
+<h2><center><%= link_to 'Nuevo mensaje', new_message_path %></center></h2>
