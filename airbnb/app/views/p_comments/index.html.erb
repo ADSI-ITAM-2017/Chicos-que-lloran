@@ -1,25 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>P Comments</h1>
+<header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
 
-<table>
+<h1>Comentarios de la propiedad</h1>
+
+<table align="center">
   <thead>
     <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
+      <th colspan="3" ><h3>Comentarios:</h3></th>
     </tr>
   </thead>
 
   <tbody>
     <% @p_comments.each do |p_comment| %>
       <tr>
-        <td><%= p_comment.content %></td>
+        <td align="center" valign="middle"><%= p_comment.content %></td>
         
       </tr>
     <% end %>
   </tbody>
 </table>
 
+	 </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<br>
 <br>
 
-<%= link_to 'New P Comment', new_p_comment_path %>
+<center><h3><%= link_to 'Nuevo comentario', new_p_comment_path %></h3></center>

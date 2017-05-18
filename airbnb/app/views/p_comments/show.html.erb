@@ -1,9 +1,20 @@
+<header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Contenido del comentario:</strong>
   <%= @p_comment.content %>
 </p>
 
-<%= link_to 'Edit', edit_p_comment_path(@p_comment) %> |
-<%= link_to 'Back', p_comments_path %>
+<%= link_to 'Editar comentario', edit_p_comment_path(@p_comment) %> |
+<%= link_to 'Regresar', p_comments_path %>
+</div>
+                </div>
+            </div>
+        </div>
+    </header>
