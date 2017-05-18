@@ -15,7 +15,9 @@
                               </tr>                          
                         <% end %>  
                         <br>
-                        <%= link_to "Haz commentario", root_url %>  
+                        <%=link_to "Haz tu comentario", new_p_comment_path(:id => @propiedad.id) %>
+                     
+
                         <%= link_to "Ver propiedades", root_url %>                    
                     </div>
                 </div>
