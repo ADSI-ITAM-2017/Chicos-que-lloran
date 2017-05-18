@@ -1,4 +1,4 @@
-class PropiedadesController < ApplicationController
+class PropiedadsController < ApplicationController
   def index
   	@propiedades = Propiedad.all
     if params[:search]
@@ -27,7 +27,7 @@ class PropiedadesController < ApplicationController
 
   private
   def allowed_params
-  	params.require(:propiedad).permit(:direccion, :precio, :descripcion, :usuario_id, :imagen)
+  	params.require(:propiedad).permit(:direccion, :precio, :descripcion, :usuario_id)
   end
 
 end

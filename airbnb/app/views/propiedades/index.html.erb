@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">  $<%=propiedad.precio%></h1>
-                        <p class="intro-text">  Arrendador: <%= propiedad.arrendador %></p>
+                        <p class="intro-text">  Arrendador: <%= Usuario.find_by_id(propiedad.usuario_id).nombre %></p>
                         <p class="intro-text">    Direccion: <%= propiedad.direccion %></p>
                         <p class="intro-text">    Descripción: <%= propiedad.descripcion %></p>   
                         <a href="propiedades/<%= propiedad.id %>"> Ver propiedad</a>                     
