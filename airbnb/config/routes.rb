@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :p_comments
+  resources :messages
   get 'sessions/new'
 
   resources :usuarios

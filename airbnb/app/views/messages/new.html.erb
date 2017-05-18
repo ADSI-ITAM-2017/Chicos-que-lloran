@@ -1,0 +1,17 @@
+<h1>Nuevo mensaje</h1>
+
+<header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+			<h2>Nuevo mensaje: </h2>
+<%= render 'form', message: @message %>
+
+<h2><%= link_to 'Regresar', messages_path %></h2>
+
+ </div>
+                </div>
+            </div>
+        </div>
+    </header>

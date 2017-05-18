@@ -9,7 +9,16 @@
                         <p class="intro-text">  Descripción: <%= @propiedad.descripcion %></p>   
                         <p class="intro-text">  Imagen: <%= @propiedad.imagen %></p>   
                         <p class="intro-text">     Apartada: <%= @propiedad.apartada %></p>
-                        <%= link_to "Regresar a lista de propiedades", root_url %>                    
+                        <br>
+                        <% @p_comments.each do |p_comment| %>
+                              <tr>
+                                <td> Comentario: <%= p_comment.content %></td>
+                                <td> Calificacion: <%= p_comment.califiacion %></td>
+                              </tr>                          
+                        <% end %>  
+                        <br>
+                        <%= link_to "Haz commentario", root_url %>  
+                        <%= link_to "Ver propiedades", root_url %>
                     </div>
                 </div>
             </div>
