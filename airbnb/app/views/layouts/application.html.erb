@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Airbnb</title>
+    <title>Chicos que lloran: AirBnB</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+	
+    <!-- Bootstrap Core CSS -->
+    <link href="http://ironsummitmedia.github.io/startbootstrap-grayscale/css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
   </head>
   <body>
-    <div id="container">
-
+ <!--    <div id="container">
       <div id="user_header">
       <% if logged_in? %>
         <%= link_to 'Cerrar sesión', logout_path %>
@@ -17,13 +26,50 @@
         <%= link_to "Iniciar sesión", login_path %>       
       <% end %>
       </div>
-
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, id: "flash_#{name}" %>
         <br>
+      <% end %> -->
 
-      <% end %>
+ <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">Chicos que lloran</span>AirBnB
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Registrate</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+</div>   
       <%= yield %>
-    </div>
+ 
+
+</div>
   </body>
 </html>
