@@ -1,6 +1,5 @@
-class PropiedadesController < ApplicationController
+class PropiedadsController < ApplicationController
   def index
-    @p_comments = PComment.all
   	@propiedades = Propiedad.all
     if params[:search]
       @propiedades = Propiedad.search(params[:search]).order("created_at DESC")
@@ -23,13 +22,12 @@ class PropiedadesController < ApplicationController
   end
 
   def show
-    @p_comments = PComment.where("propiedad_id="+params[:id])
-  	@propiedad = Propiedad.find_by_id(params[:id])
+  	@propiedad = Propiedad.find(params[:id])
   end
 
   private
   def allowed_params
-  	params.require(:propiedad).permit(:direccion, :precio, :descripcion, :usuario_id, :imagen)
+  	params.require(:propiedad).permit(:direccion, :precio, :descripcion, :usuario_id)
   end
 
 end

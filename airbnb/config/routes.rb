@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :usuarios
   resources :propiedades
+  resources :propiedads
   resources :sessions
   root to: 'propiedades#index'
   get 'registro', to: 'usuarios#new', as: 'registro'
