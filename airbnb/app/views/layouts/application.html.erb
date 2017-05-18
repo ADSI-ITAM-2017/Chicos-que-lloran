@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chicos que lloran: AirBnB</title>
+    <title>AirBnB Chicos que lloran</title>
     <%= csrf_meta_tags %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <!-- Custom CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-stylish-portfolio/css/stylish-portfolio.css" rel="stylesheet">
+  </head>
 
-	
-    <!-- Bootstrap Core CSS -->
-    <link href="http://ironsummitmedia.github.io/startbootstrap-grayscale/css/grayscale.css" rel="stylesheet">
+  <body>
+<link href="https://blackrockdigital.github.io/startbootstrap-grayscale/css/grayscale.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-  </head>
+ </head>
   <body>
- <!--    <div id="container">
-      <div id="user_header">
-      <% if logged_in? %>
-        <%= link_to 'Cerrar sesión', logout_path %>
-      <% else %>
-        <%= link_to "Regístrate", registro_path %>
-        <%= link_to "Iniciar sesión", login_path %>       
-      <% end %>
-      </div>
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
-        <br>
-      <% end %> -->
+
 
  <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -38,8 +29,8 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i> <span class="light">Chicos que lloran</span>AirBnB
+                <a class="navbar-brand page-scroll" href="propiedades">
+                    <i class="fa fa-play-circle"></i> <span class="light">Chicos que lloran:</span> AirBnB
                 </a>
             </div>
 
@@ -47,17 +38,15 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
+
+                    <li>
+                        <a class="page-scroll" href="registro">Registrate</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Registrate</a>
+                        <a class="page-scroll" href="login">Iniciar sesión</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#download">Iniciar sesión</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Cerrar sesión</a>
+                        <a class="page-scroll" href="logout">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>
@@ -66,10 +55,14 @@
         <!-- /.container -->
     </nav>
 
-</div>   
-      <%= yield %>
- 
+    <%= yield %>
+      <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Bootstrap ocupado de la página: https://startbootstrap.com/</p>
+	    <p>Los chicos que lloran que sí llorarón</p>
+        </div>
+    </footer>
 
-</div>
   </body>
 </html>
