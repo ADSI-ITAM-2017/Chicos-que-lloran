@@ -1,8 +1,6 @@
 <h1>Propiedades</h1>
-<%= form_tag(propiedades_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Buscar propiedades" %>
-        <%= submit_tag "Search", :name => nil %>
-<% end %>
+
+
 <div id="propiedades">
 <% @propiedades.each do |propiedad| %>
 	<header class="intro">
