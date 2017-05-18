@@ -14,17 +14,19 @@
     </div>
     <div class="field">
   <%= f.label :precio %><br />
-      <%= f.text_field :precio %>
+      <%= f.text_field :precio %>ididid
     </div>
     <div class="field">
   <%= f.label :descripcion %><br />
       <%= f.text_field :descripcion %>
     </div>
     <div class="field">
-  <%= f.label :arrendador %><br />
-      <%= f.text_field :arrendador %>
+  <%= f.label :URLImagen %><br />
+      <%= f.text_field :imagen %>
     </div>
-  <%= hidden_field_tag(:usuario_id, session[:usuario_id]) %>
+    <div class="field">
+       <%= f.hidden_field :usuario_id, :value => session[:usuario_id] %>
+    </div>
     <div class="actions"><%= f.submit "Registrar" %></div>
   <% end %>
 <% end %>

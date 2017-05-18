@@ -1,17 +1,32 @@
- <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">  $<%=propiedad.precio%></h1>
-                        <p class="intro-text">  Arrendador: <%= propiedad.arrendador %></p>
-                        <p class="intro-text">    Direccion: <%= propiedad.direccion %></p>
-                        <p class="intro-text">    Descripción: <%= propiedad.descripcion %></p>   
-                        <a href="propiedades/<%= propiedad.id %>"> Ver propiedad</a>                     
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<%= form_with(model: propiedad, local: true) do |form| %>
+  <% if propiedad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(propiedad.errors.count, "error") %> prohibited this propiedad from being saved:</h2>
 
+      <ul>
+      <% propiedad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :precio %>
+    <%= form.text_field :precio, id: :propiedad_precio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion, id: :propiedad_direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :propiedad_descripcion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
