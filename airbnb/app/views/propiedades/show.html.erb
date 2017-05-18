@@ -8,14 +8,14 @@
                         <p class="intro-text">    Direccion: <%= @propiedad.direccion %></p>
                         <p class="intro-text">  Descripción: <%= @propiedad.descripcion %></p> 
                         <% @p_comments.each do |p_comment| %>
-
-      <tr>
-        <td> Comentario: <%= p_comment.content %></td>
-        <td> Calificacion: <%= p_comment.califiacion %></td>
-        
-      </tr>
-      <br>
-    <% end %>  
+                              <tr>
+                                <td> Comentario: <%= p_comment.content %></td>
+                                <td> Calificacion: <%= p_comment.califiacion %></td>
+                                
+                              </tr>                          
+                        <% end %>  
+                        <br>
+                        <%= link_to "Haz commentario", root_url %>  
                         <%= link_to "Ver propiedades", root_url %>                    
                     </div>
                 </div>

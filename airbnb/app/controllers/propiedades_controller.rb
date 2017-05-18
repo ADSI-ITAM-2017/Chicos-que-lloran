@@ -14,7 +14,7 @@ class PropiedadesController < ApplicationController
 
   def show
     @p_comments = PComment.where("propiedad_id="+params[:id])
-  	@propiedad = Propiedad.find(params[:id])
+  	@propiedad = Propiedad.find_by_id(params[:id])
   end
 
   private
