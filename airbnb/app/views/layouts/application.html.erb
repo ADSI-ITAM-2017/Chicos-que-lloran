@@ -7,11 +7,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
       <!-- Custom CSS -->
-    <link href="https://blackrockdigital.github.io/startbootstrap-stylish-portfolio/css/stylish-portfolio.css" rel="stylesheet">
+    <link href="https://raw.githubusercontent.com/AlfonsoVenancio/TrapitosParaLlorar/master/portafolioStilizado.css" rel="stylesheet">
   </head>
 
   <body>
 <link href="https://blackrockdigital.github.io/startbootstrap-grayscale/css/grayscale.min.css" rel="stylesheet">
+<!-- <link href="https://raw.githubusercontent.com/AlfonsoVenancio/TrapitosParaLlorar/master/portafolioStilizado2.css" rel="stylesheet"> -->
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -38,16 +39,19 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-
-                    <li>
-                        <a class="page-scroll" href="registro">Registrate</a>
+		<% if logged_in? %>
+		    <li>
+                        <a class="page-scroll" href="logout">Cerrar sesión</a>
                     </li>
+		<% else %>
+                   
                     <li>
                         <a class="page-scroll" href="login">Iniciar sesión</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="logout">Cerrar sesión</a>
+ 			<li>
+                        <a class="page-scroll" href="registro">Registrate</a>
                     </li>
+                 <% end %>
                 </ul>
             </div>
             <%= form_tag(propiedades_path, :method => "get", id: "search-form") do %>
