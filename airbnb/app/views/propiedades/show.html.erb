@@ -1,10 +1,15 @@
-<h1>Precio: $<%= @propiedad.precio %></h1>
-<br>
-Arrendador: <%=@propiedad.arrendador %>
-<br>
-Direccion: <%=@propiedad.direccion %>
-<br>
-Descripcion: <%=@propiedad.descripcion %>
-<p>
-  <%= link_to "Ver propiedades", propiedades_path %>
-</p>
+<header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">   Precio: $<%= @propiedad.precio %></h1>
+                        <p class="intro-text">   Arrendador: <%= @propiedad.arrendador %></p>
+                        <p class="intro-text">    Direccion: <%= @propiedad.direccion %></p>
+                        <p class="intro-text">  Descripción: <%= @propiedad.descripcion %></p>   
+                        <%= link_to "Ver propiedades", root_url %>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>

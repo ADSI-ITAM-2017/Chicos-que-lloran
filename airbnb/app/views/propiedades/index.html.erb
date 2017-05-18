@@ -1,4 +1,25 @@
 <h1>Propiedades</h1>
+<%= form_tag(propiedades_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Buscar propiedades" %>
+        <%= submit_tag "Search", :name => nil %>
+<% end %>
 <div id="propiedades">
-<%= render @propiedades %>
+<% @propiedades.each do |propiedad| %>
+	<header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">  $<%=propiedad.precio%></h1>
+                        <p class="intro-text">  Arrendador: <%= propiedad.arrendador %></p>
+                        <p class="intro-text">    Direccion: <%= propiedad.direccion %></p>
+                        <p class="intro-text">    Descripción: <%= propiedad.descripcion %></p>   
+                        <a href="propiedades/<%= propiedad.id %>"> Ver propiedad</a>                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<% end %>
 </div>
